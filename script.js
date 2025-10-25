@@ -1,0 +1,1 @@
+console.log("Ayurveez website loaded!");
