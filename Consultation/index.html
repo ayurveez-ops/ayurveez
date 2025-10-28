@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Consultation | Ayurveez</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7f6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+    .doctor-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea, select, button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Consultation</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Book Your Appointment</h2>
+
+    <!-- Doctor 1 -->
+    <div class="doctor-card">
+      <h3>👨‍⚕️ Dr. Ravi Shankar Kumar (BAMS)</h3>
+      <p>Specialist in Ayurvedic Consultation & Classical Treatments</p>
+      <form action="https://formspree.io/f/mkgpjynb" method="POST">
+        <input type="hidden" name="doctor" value="Dr. Ravi Shankar Kumar (BAMS)">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="problem" placeholder="Describe your health issue" required></textarea>
+        <button type="submit">Book with Dr. Ravi</button>
+      </form>
+    </div>
+
+    <!-- Doctor 2 -->
+    <div class="doctor-card">
+      <h3>👨‍⚕️ Dr. Shiv Shankar Kumar (MBBS, M.S)</h3>
+      <p>Specialist in General & Surgical Consultation</p>
+      <form action="https://formspree.io/f/mdkpeboj" method="POST">
+        <input type="hidden" name="doctor" value="Dr. Shiv Shankar Kumar (MBBS, M.S)">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="problem" placeholder="Describe your health issue" required></textarea>
+        <button type="submit">Book with Dr. Shiv</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
