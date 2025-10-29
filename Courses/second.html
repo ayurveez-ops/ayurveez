@@ -43,10 +43,49 @@
       cursor: pointer;
     }
     .btn:hover { background: #00695c; }
+
+    /* Modal Styling */
+    #enrollModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    .modal-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .modal-buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #payNow { background: #00897b; color: #fff; }
+    #cancelBtn { background: #ccc; }
   </style>
 </head>
-<body>
 
+<body>
   <h1>Second Professional Year</h1>
 
   <div class="subject-container">
@@ -54,42 +93,37 @@
       <img src="images/rasashastra.jpg" alt="Rasashastra">
       <h3>Rasashastra & Bhaishajya Kalpana</h3>
       <p>₹999</p>
-      <button class="btn">Enroll</button>
+      <button class="btn enroll-btn" data-course="Rasashastra & Bhaishajya Kalpana">Enroll</button>
     </div>
-
     <div class="card">
       <img src="images/dravyaguna.jpg" alt="Dravyaguna">
       <h3>Dravyaguna Vigyan</h3>
       <p>₹999</p>
-      <button class="btn">Enroll</button>
+      <button class="btn enroll-btn" data-course="Dravyaguna Vigyan">Enroll</button>
     </div>
-
     <div class="card">
       <img src="images/roganidan.jpg" alt="Rog Nidan">
       <h3>Rog Nidan & Vikriti Vigyan</h3>
       <p>₹999</p>
-      <button class="btn">Enroll</button>
+      <button class="btn enroll-btn" data-course="Rog Nidan & Vikriti Vigyan">Enroll</button>
     </div>
-
-<div class="card">
+    <div class="card">
       <img src="images/swasthavritta.jpg" alt="Swasthavritta">
       <h3>Swasthavritta</h3>
       <p>₹999</p>
-      <button class="btn">Enroll</button>
+      <button class="btn enroll-btn" data-course="Swasthavritta">Enroll</button>
     </div>
-
     <div class="card">
       <img src="images/samhita 2.jpg" alt="Samhita Adhyayan">
       <h3>Samhita Adhyayan 2</h3>
       <p>₹999</p>
-      <button class="btn">Enroll</button>
+      <button class="btn enroll-btn" data-course="Samhita Adhyayan 2">Enroll</button>
     </div>
-
     <div class="card">
       <img src="images/agadatantra.jpg" alt="Agadtantra">
       <h3>Agadtantra & Vyavahar Ayurveda</h3>
       <p>₹999</p>
-      <button class="btn">Enroll</button>
+      <button class="btn enroll-btn" data-course="Agadtantra & Vyavahar Ayurveda">Enroll</button>
     </div>
   </div>
 
@@ -98,8 +132,48 @@
     <img src="images/second.jpg" alt="Bundle">
     <h3>Second Year Full Bundle</h3>
     <p>All 6 subjects together — ₹5555</p>
-    <button class="btn">Enroll Bundle</button>
+    <button class="btn enroll-btn" data-course="Second Year Full Bundle">Enroll Bundle</button>
+  </div>
+  <!-- Modal -->
+  <div id="enrollModal">
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <div class="modal-buttons">
+        <button id="payNow">Proceed to Payment</button>
+        <button id="cancelBtn">Cancel</button>
+      </div>
+    </div>
   </div>
 
+  <!-- Script -->
+  <script>
+    const modal = document.getElementById("enrollModal");
+    const title = document.getElementById("modalTitle");
+    const desc = document.getElementById("modalDesc");
+    let selectedCourse = "";
+
+    document.querySelectorAll(".enroll-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        selectedCourse = btn.dataset.course;
+        title.innerText = "Enroll in " + selectedCourse;
+        desc.innerText = "You are about to enroll for " + selectedCourse + ". Proceed to secure payment?";
+        modal.style.display = "flex";
+      });
+    });
+
+    document.getElementById("cancelBtn").onclick = () => {
+      modal.style.display = "none";
+    };
+
+    document.getElementById("payNow").onclick = () => {
+      modal.style.display = "none";
+      window.open("https://payments.cashfree.com/forms?code=ayurveez_pay", "_blank");
+    };
+
+    modal.addEventListener("click", e => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  </script>
 </body>
 </html>
