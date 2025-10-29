@@ -9,10 +9,14 @@
 <body>
 
   <header>
-    <h1>🌿 Ayurveez</h1>
+    <h1 class="brand">
+  <img src="Assets/Images/logo.png" 
+  alt="Ayurveez Logo" class="logo">
+  Ayurveez
+</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="Courses/first.html">Courses</a>
+      <a href="Courses/courses.html">Courses</a>
       <a href="Consultation/index.html">Consultation</a>
       <a href="Products/index.html">Products</a>
       <a href="#about">About</a>
@@ -21,11 +25,56 @@
     </nav>
   </header>
 
+<!-- Ayurvedic Shloka Slider -->
+<section class="shloka-slider">
+  <div class="shloka active">
+    <p>🕉️ <em>“धर्मार्थकाममोक्षाणाम् आरोग्यं मूलमुत्तमम्।”</em></p>
+    <p class="trans">Health is the foundation of Dharma, Artha, Kama and Moksha.</p>
+  </div>
+
+  <div class="shloka">
+    <p>🌿 <em>“सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः।”</em></p>
+    <p class="trans">May all be happy, may all be free from illness.</p>
+  </div>
+
+  <div class="shloka">
+    <p>🍃 <em>“आयुः कामायमानेन धर्मार्थसुखसाधनम्।”</em></p>
+    <p class="trans">Life is desired for fulfilling Dharma, wealth and happiness.</p>
+  </div>
+
+  <div class="shloka">
+    <p>🔥 <em>"अहारसंभवो देहः।"</em></p>
+    <p class="trans">The body is the result of the food one consumes.</p>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button id="prev">⟵ Prev</button>
+    <button id="next">Next ⟶</button>
+  </div>
+</section>
+
   <section class="hero">
-    <h2>Ancient Wisdom, Modern Healing</h2>
-    <p>Discover authentic Ayurveda with Ayurveez — your digital Ayurveda companion.</p>
-    <a href="#contact" class="btn">Consult Now</a>
-  </section>
+  <div class="hero-container">
+    <div class="hero-box left">
+      <h3>BAMS Courses</h3>
+      <p>Explore our Ayurveda-based BAMS courses curated for passionate learners.</p>
+      <a href="Courses/courses.html" class="btn">Explore Courses</a>
+    </div>
+
+    <div class="hero-box center">
+      <h2>Ancient Wisdom, Modern Healing</h2>
+      <p>Discover authentic Ayurveda with Ayurveez — your digital Ayurvedic companion.</p>
+      <a href="Consultation/index.html" class="btn">Consult Now</a>
+    </div>
+
+    <div class="hero-box right">
+      <h3>Products</h3>
+      <p>Browse our Ayurvedic products crafted with classical formulations.</p>
+      <a href="Products/index.html" class="btn">View Products</a>
+    </div>
+  </div>
+</section>
 
   <section id="about">
     <h2>About Ayurveez</h2>

@@ -2,31 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BAMS 1st Year - Ayurveez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second Year Subjects - Ayurveez</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f8f9fa;
+      text-align: center;
+      padding: 20px;
+    }
+    .subject-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .card {
+      width: 250px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .card:hover { transform: scale(1.05); }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card h3 { margin: 10px 0; }
+    .btn {
+      background: #00897b;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn:hover { background: #00695c; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>1st Year Courses</h1>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="second.html">2nd Year</a>
-      <a href="final.html">Final Year</a>
-    </nav>
-  </header>
 
-  <section>
-    <h2>Subjects</h2>
-    <ul>
-      <li><a href="../assets/videos/rasashastra.mp4">RasaShastra Video</a></li>
-      <li><a href="../assets/videos/dravyaguna.mp4">Dravyaguna Video</a></li>
-      <li><a href="../assets/videos/agadatantra.mp4">Agadatantra Video</a></li>
-       <li><a href="../assets/videos/charak samhita.mp4">Charak Samhita Video</a></li>
-      <li><a href="../assets/videos/swasthavritta.mp4">Swasthavritta Video</a></li>
-      <li><a href="../assets/videos/roganidana.mp4">Roga Nidana Video</a></li>
-      <li><a href="../courses/notes/first-notes.html">Notes</a></li>
-      <li><a href="../assets/test-papers/first-test.pdf">Test Papers</a></li>
-    </ul>
-  </section>
+  <h1>Second Professional Year</h1>
+
+  <div class="subject-container">
+    <div class="card">
+      <img src="images/rasashastra.jpg" alt="Rasashastra">
+      <h3>Rasashastra & Bhaishajya Kalpana</h3>
+      <p>₹999</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/dravyaguna.jpg" alt="Dravyaguna">
+      <h3>Dravyaguna Vigyan</h3>
+      <p>₹999</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/roganidan.jpg" alt="Rog Nidan">
+      <h3>Rog Nidan & Vikriti Vigyan</h3>
+      <p>₹999</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+<div class="card">
+      <img src="images/swasthavritta.jpg" alt="Swasthavritta">
+      <h3>Swasthavritta</h3>
+      <p>₹999</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/samhita 2.jpg" alt="Samhita Adhyayan">
+      <h3>Samhita Adhyayan 2</h3>
+      <p>₹999</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/agadatantra.jpg" alt="Agadtantra">
+      <h3>Agadtantra & Vyavahar Ayurveda</h3>
+      <p>₹999</p>
+      <button class="btn">Enroll</button>
+    </div>
+  </div>
+
+  <h2 style="margin-top:40px;">Bundle Offer</h2>
+  <div class="card" style="margin:0 auto; width:280px;">
+    <img src="images/second.jpg" alt="Bundle">
+    <h3>Second Year Full Bundle</h3>
+    <p>All 6 subjects together — ₹5555</p>
+    <button class="btn">Enroll Bundle</button>
+  </div>
+
 </body>
 </html>

@@ -2,32 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BAMS 1st Year - Ayurveez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Year Subjects - Ayurveez</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f8f9fa;
+      text-align: center;
+      padding: 20px;
+    }
+    .subject-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .card {
+      width: 250px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .card:hover { transform: scale(1.05); }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card h3 { margin: 10px 0; }
+    .btn {
+      background: #00897b;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn:hover { background: #00695c; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>1st Year Courses</h1>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="second.html">2nd Year</a>
-      <a href="final.html">Final Year</a>
-    </nav>
-  </header>
 
-  <section>
-    <h2>Subjects</h2>
-    <ul>
-      <li><a href="../assets/videos/kayachiktsa.mp4">KayaChikitsa Video</a></li>
-      <li><a href="../assets/videos/shalyatantra.mp4">Shalya Tantra Video</a></li>
-      <li><a href="../assets/videos/panchakarma.mp4">Panchakarma Video</a></li>
-       <li><a href="../assets/videos/shalakyatantra.mp4">Shalakya Tantra Video</a></li>
-      <li><a href="../assets/videos/reasearch.mp4">Reasearch & Medical Statistics Video</a></li>
-      <li><a href="../assets/videos/kaumarbhritya.mp4">Kaumarbhitya Video</a></li>
-      <li><a href="../assets/videos/prasutitantra.mp4">Prasuti Tantra Video</a></li>
-      <li><a href="../courses/notes/first-notes.html">Notes</a></li>
-      <li><a href="../assets/test-papers/first-test.pdf">Test Papers</a></li>
-    </ul>
-  </section>
+  <h1>Final Professional Year</h1>
+
+  <div class="subject-container">
+    <div class="card">
+      <img src="images/shalya.jpg" alt="Shalya Tantra">
+      <h3>Shalya Tantra</h3>
+      <p>₹1499</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/shalakya.jpg" alt="Shalakya Tantra">
+      <h3>Shalakya Tantra</h3>
+      <p>₹1499</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/kaumarbhritya.jpg" alt="Kaumarbhritya">
+      <h3>Kaumarbhritya & Prasuti Tantra</h3>
+      <p>₹1499</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/kayachikitsa.jpg" alt="Kayachikitsa">
+      <h3>Kayachikitsa</h3>
+      <p>₹1499</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+     <div class="card">
+      <img src="images/shalya.jpg" alt="Panchakarma">
+      <h3>Panchakarma</h3>
+      <p>₹1499</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/shalakya.jpg" alt="Samhita Adhyayan 3">
+      <h3>Samhita Adhyayan 3</h3>
+      <p>₹1499</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/kaumarbhritya.jpg" alt="Emergency Medicine">
+      <h3>Emergency Medicine</h3>
+      <p>₹1199</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+     <div class="card">
+      <img src="images/kaumarbhritya.jpg" alt="Prasuti Tantra evam Stree Roga">
+      <h3>Prasuti Tantra evam Stree Roga</h3>
+      <p>₹1499</p>
+      <button class="btn">Enroll</button>
+    </div>
+
+    <div class="card">
+      <img src="images/kayachikitsa.jpg" alt="Research Methodology & Medical Statistics">
+      <h3>Research Methodology & Medical Statistics</h3>
+      <p>₹1199</p>
+      <button class="btn">Enroll</button>
+    </div>
+  </div>
+
+  <h2 style="margin-top:40px;">Bundle Offer</h2>
+  <div class="card" style="margin:0 auto; width:280px;">
+    <img src="images/final.jpg" alt="Bundle">
+    <h3>Final Year Full Bundle</h3>
+    <p>All 9 subjects together — ₹9999</p>
+    <button class="btn">Enroll Bundle</button>
+  </div>
+
 </body>
 </html>
