@@ -65,18 +65,19 @@
       gap: 10px;
     }
 
-    header h1 a:hover {
-      opacity: 0.85;
-    }
-
     header img {
       width: 45px;
       height: 45px;
       border-radius: 10px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
     nav a {
-      margin: 0 10px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
@@ -84,6 +85,42 @@
 
     nav a:hover {
       color: #2f6b2f;
+    }
+
+    /* 🌿 Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: #2f6b2f;
+      margin: 4px 0;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #e5f2d6;
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        padding: 10px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
     }
 
     /* 🌿 Footer Section */
@@ -137,6 +174,24 @@
       font-size: 0.9rem;
     }
 
+    /* 🌿 Footer Center on Mobile */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-container div {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      footer h3, footer p, footer a {
+        text-align: center;
+      }
+    }
+
     /* 🌿 Floating WhatsApp Icon */
     .whatsapp-float {
       position: fixed;
@@ -162,17 +217,9 @@
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
-      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37,211,102, 0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
-    }
-
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0); }
     }
   </style>
 </head>
@@ -186,6 +233,13 @@
         Ayurveez
       </a>
     </h1>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <nav>
       <a href="../index.html">Home</a>
       <a href="../Courses/courses.html">Courses</a>
@@ -206,7 +260,6 @@
   <!-- 🌿 Footer -->
   <footer>
     <div class="footer-container">
-
       <div>
         <h3>Ayurveez Healthcare</h3>
         <p>Promoting Ayurvedic learning and wellness through education, consultation, and authentic healthcare products. Our mission is to blend ancient wisdom with modern understanding.</p>
@@ -227,16 +280,8 @@
         <p>📞 +91-8271890090</p>
         <p>📧 ayurveez@gmail.com</p>
         <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
-        <p>
-          <a href="https://www.youtube.com/@ayurveez" target="_blank">
-            <img src="../Assets/Images/Youtube_logo.png" alt="YouTube" style="width:20px; vertical-align:middle;"> YouTube Channel
-          </a>
-        </p>
-        <p>
-          <a href="https://www.instagram.com/ayurveez_bams/" target="_blank">
-            <img src="../Assets/Images/instagram.png" alt="Instagram" style="width:20px; vertical-align:middle;"> Instagram Page
-          </a>
-        </p>
+        <p><a href="https://www.youtube.com/@ayurveez" target="_blank"><img src="../Assets/Images/Youtube_logo.png" style="width:20px;"> YouTube Channel</a></p>
+        <p><a href="https://www.instagram.com/ayurveez_bams/" target="_blank"><img src="../Assets/Images/instagram.png" style="width:20px;"> Instagram Page</a></p>
       </div>
 
       <div>
@@ -250,10 +295,18 @@
     <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
   </footer>
 
-  <!-- 🌿 Floating WhatsApp Icon -->
+  <!-- 🌿 WhatsApp Floating Icon -->
   <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
     <img src="../Assets/Images/whatsapp.png" alt="WhatsApp Chat">
   </a>
 
+  <!-- 🌿 Script -->
+  <script>
+    const menu = document.querySelector("nav");
+    const menuToggle = document.getElementById("mobile-menu");
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>

@@ -48,8 +48,13 @@
       border-radius: 8px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
     nav a {
-      margin: 0 10px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
@@ -91,6 +96,48 @@
 
     .dropdown:hover .dropdown-content {
       display: block;
+    }
+
+    /* 🌿 Hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: #2f6b2f;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #e5f2d6;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .dropdown:hover .dropdown-content {
+        position: static;
+        display: block;
+      }
     }
 
     /* 🌿 Course Section */
@@ -151,12 +198,22 @@
       background: #00695c;
     }
 
-    /* 🌿 Footer Section */
+    /* 🌿 Footer */
     footer {
       background: linear-gradient(to right, #1b5e20, #2e7d32);
       color: white;
       padding: 40px 20px 10px;
       margin-top: 60px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
     }
 
     footer h3 {
@@ -176,21 +233,6 @@
       text-decoration: underline;
     }
 
-    .footer-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      text-align: left;
-      max-width: 1200px;
-      margin: auto;
-      gap: 40px;
-    }
-
-    footer p {
-      margin: 6px 0;
-      font-size: 0.95rem;
-    }
-
     footer hr {
       margin: 30px auto;
       border-color: #ffffff33;
@@ -202,7 +244,7 @@
       font-size: 0.9rem;
     }
 
-    /* 🌿 Floating WhatsApp Icon */
+    /* 🌿 WhatsApp Icon */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -232,11 +274,20 @@
       100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
     }
 
-    /* Responsive */
+    /* 🌿 Responsive Footer Fix */
     @media (max-width: 768px) {
       .footer-container {
         flex-direction: column;
         align-items: center;
+        text-align: center;
+      }
+
+      .footer-container div {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      footer p, footer a, footer h3 {
         text-align: center;
       }
     }
@@ -252,7 +303,12 @@
         Ayurveez
       </a>
     </h1>
-    <nav>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div><div></div><div></div>
+    </div>
+
+    <nav id="nav-links">
       <a href="../index.html">Home</a>
 
       <div class="dropdown">
@@ -294,15 +350,13 @@
     </div>
   </div>
 
-  <!-- 🌿 Footer Section -->
+  <!-- 🌿 Footer -->
   <footer>
     <div class="footer-container">
-
       <div>
         <h3>Ayurveez Healthcare</h3>
         <p>Promoting Ayurvedic learning and wellness through education, consultation, and authentic healthcare products. Our mission is to blend ancient wisdom with modern understanding.</p>
       </div>
-
       <div>
         <h3>Quick Links</h3>
         <a href="../index.html">Home</a>
@@ -312,39 +366,36 @@
         <a href="../index.html#about">About</a>
         <a href="../index.html#contact">Contact</a>
       </div>
-
       <div>
         <h3>Contact Us</h3>
         <p>📞 +91-8271890090</p>
         <p>📧 ayurveez@gmail.com</p>
         <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
-        <p>
-          <a href="https://www.youtube.com/@ayurveez" target="_blank">
-            <img src="../Assets/Images/Youtube_logo.png" alt="YouTube" style="width:20px; vertical-align:middle;"> YouTube Channel
-          </a>
-        </p>
-        <p>
-          <a href="https://www.instagram.com/ayurveez_bams/" target="_blank">
-            <img src="../Assets/Images/instagram.png" alt="Instagram" style="width:20px; vertical-align:middle;"> Instagram Page
-          </a>
-        </p>
+        <p><a href="https://www.youtube.com/@ayurveez" target="_blank"><img src="../Assets/Images/Youtube_logo.png" style="width:20px;"> YouTube Channel</a></p>
+        <p><a href="https://www.instagram.com/ayurveez_bams/" target="_blank"><img src="../Assets/Images/instagram.png" style="width:20px;"> Instagram Page</a></p>
       </div>
-
       <div>
         <h3>Legal</h3>
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../terms.html">Terms & Conditions</a>
       </div>
     </div>
-
     <hr>
     <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
   </footer>
 
-  <!-- 🌿 Floating WhatsApp Icon -->
+  <!-- 🌿 WhatsApp -->
   <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
     <img src="../Assets/Images/whatsapp.png" alt="WhatsApp Chat">
   </a>
+
+  <!-- 🌿 Navbar Toggle Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+  </script>
 
 </body>
 </html>

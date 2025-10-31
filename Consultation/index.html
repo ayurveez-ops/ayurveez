@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Consultation | Ayurveez</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css" />
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -49,8 +49,13 @@
       border-radius: 8px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
     nav a {
-      margin: 0 10px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
@@ -60,8 +65,47 @@
       color: #2f6b2f;
     }
 
-    /* 🌿 Consultation Page Content */
-    h1 { color: #00695c; margin-bottom: 20px; }
+    /* 🌿 Hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: #2f6b2f;
+      margin: 4px 0;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #e5f2d6;
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        padding: 10px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* 🌿 Consultation Page */
+    h1 {
+      color: #00695c;
+      margin-bottom: 20px;
+    }
 
     .tab-container {
       display: flex;
@@ -89,30 +133,28 @@
       display: none;
       background: white;
       border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       max-width: 450px;
       margin: 0 auto;
       padding: 25px;
     }
 
-    .doctor-card.active { display: block; }
+    .doctor-card.active {
+      display: block;
+    }
 
     .doctor-card img {
       width: 100%;
-      height: auto;
       max-height: 450px;
       object-fit: contain;
       border-radius: 10px;
       background: #f9f9f9;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     .doctor-card h2 {
       margin: 15px 0 5px;
       color: #004d40;
     }
-
-    .doctor-card p { font-size: 0.95rem; margin-bottom: 20px; }
 
     .btn {
       background: #00897b;
@@ -125,9 +167,11 @@
       transition: 0.3s;
     }
 
-    .btn:hover { background: #00695c; }
+    .btn:hover {
+      background: #00695c;
+    }
 
-    /* 🌿 Footer Section */
+    /* 🌿 Footer */
     footer {
       background: linear-gradient(to right, #1b5e20, #2e7d32);
       color: white;
@@ -178,7 +222,27 @@
       font-size: 0.9rem;
     }
 
-    /* 🌿 Floating WhatsApp Icon */
+    /* 🌿 Center Footer on Mobile */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-container div {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      footer p,
+      footer a,
+      footer h3 {
+        text-align: center;
+      }
+    }
+
+    /* 🌿 WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -191,7 +255,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       text-decoration: none;
       animation: pulse 1.5s infinite;
       z-index: 3000;
@@ -203,31 +267,38 @@
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
-      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37,211,102, 0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
-    }
-
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
       }
     }
   </style>
 </head>
 
 <body>
-
   <!-- 🌿 Header -->
   <header>
     <h1>
       <a href="../index.html">
-        <img src="../Assets/Images/logo.png" alt="Ayurveez Logo">
+        <img src="../Assets/Images/logo.png" alt="Ayurveez Logo" />
         Ayurveez
       </a>
     </h1>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <nav>
       <a href="../index.html">Home</a>
       <a href="../Courses/courses.html">Courses</a>
@@ -248,14 +319,14 @@
   </div>
 
   <div id="ravi" class="doctor-card active">
-    <img src="../Assets/Images/online consult image.png" alt="Dr. Ravi">
+    <img src="../Assets/Images/online consult image.png" alt="Dr. Ravi" />
     <h2>Dr. Ravi Shankar Kumar, BAMS</h2>
     <p>Specialist in Ayurvedic Internal Medicine and Lifestyle Disorders.</p>
     <button class="btn" onclick="location.href='ravi-consult.html'">Book Appointment</button>
   </div>
 
   <div id="shiv" class="doctor-card">
-    <img src="images/SHIV.jpg" alt="Dr. Shiv">
+    <img src="images/SHIV.jpg" alt="Dr. Shiv" />
     <h2>Dr. Shiv Shankar Kumar, MBBS, M.S</h2>
     <p>General Physician & Surgeon.</p>
     <button class="btn" onclick="location.href='shiv-consult.html'">Book Appointment</button>
@@ -264,10 +335,11 @@
   <!-- 🌿 Footer -->
   <footer>
     <div class="footer-container">
-
       <div>
         <h3>Ayurveez Healthcare</h3>
-        <p>Promoting Ayurvedic learning and wellness through education, consultation, and authentic healthcare products. Our mission is to blend ancient wisdom with modern understanding.</p>
+        <p>
+          Promoting Ayurvedic learning and wellness through education, consultation, and authentic healthcare products. Our mission is to blend ancient wisdom with modern understanding.
+        </p>
       </div>
 
       <div>
@@ -285,16 +357,8 @@
         <p>📞 +91-8271890090</p>
         <p>📧 ayurveez@gmail.com</p>
         <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
-        <p>
-          <a href="https://www.youtube.com/@ayurveez" target="_blank">
-            <img src="../Assets/Images/Youtube_logo.png" alt="YouTube" style="width:20px; vertical-align:middle;"> YouTube Channel
-          </a>
-        </p>
-        <p>
-          <a href="https://www.instagram.com/ayurveez_bams/" target="_blank">
-            <img src="../Assets/Images/instagram.png" alt="Instagram" style="width:20px; vertical-align:middle;"> Instagram Page
-          </a>
-        </p>
+        <p><a href="https://www.youtube.com/@ayurveez" target="_blank"><img src="../Assets/Images/Youtube_logo.png" style="width:20px;"> YouTube Channel</a></p>
+        <p><a href="https://www.instagram.com/ayurveez_bams/" target="_blank"><img src="../Assets/Images/instagram.png" style="width:20px;"> Instagram Page</a></p>
       </div>
 
       <div>
@@ -302,26 +366,32 @@
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../terms.html">Terms & Conditions</a>
       </div>
-
     </div>
-    <hr>
+    <hr />
     <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
   </footer>
 
-  <!-- 🌿 Floating WhatsApp Icon -->
+  <!-- 🌿 WhatsApp -->
   <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
-    <img src="../Assets/Images/whatsapp.png" alt="WhatsApp Chat">
+    <img src="../Assets/Images/whatsapp.png" alt="WhatsApp Chat" />
   </a>
 
   <!-- 🌿 Script -->
   <script>
+    // Hamburger
+    const menu = document.querySelector("nav");
+    const menuToggle = document.getElementById("mobile-menu");
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // Doctor Tabs
     function showDoctor(id) {
-      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-      document.querySelectorAll('.doctor-card').forEach(card => card.classList.remove('active'));
-      event.target.classList.add('active');
-      document.getElementById(id).classList.add('active');
+      document.querySelectorAll(".tab").forEach((tab) => tab.classList.remove("active"));
+      document.querySelectorAll(".doctor-card").forEach((card) => card.classList.remove("active"));
+      event.target.classList.add("active");
+      document.getElementById(id).classList.add("active");
     }
   </script>
-
 </body>
 </html>

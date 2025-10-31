@@ -14,6 +14,11 @@
     gtag('config', 'G-E1C8CNPLW9');
   </script>
 
+  <!-- ✅ PWA Files -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2e7d32">
+  <link rel="icon" href="Assets/Images/logo.png" type="image/png">
+
   <link rel="stylesheet" href="style.css" />
 
   <style>
@@ -73,9 +78,7 @@
       background: #e5f2d6;
       color: #2f6b2f;
     }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+    .dropdown:hover .dropdown-content { display: block; }
 
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
@@ -125,19 +128,35 @@
       color: #333;
       margin-bottom: 20px;
     }
+
+    /* ✅ Fixed Button Alignment */
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
     .hero-buttons a {
       background: #2e7d32;
       color: white;
       text-decoration: none;
       padding: 10px 20px;
       border-radius: 8px;
-      margin-right: 10px;
       font-weight: 500;
+      flex: 1 1 100px;
+      text-align: center;
+      margin: 5px;
     }
     .hero-buttons a:hover { background: #1b5e20; }
+
     .hero img { width: 350px; border-radius: 15px; }
 
-    /* ===== Our Services ===== */
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; }
+      .hero img { margin-top: 25px; width: 280px; }
+    }
+
+    /* ===== Services ===== */
     #services {
       background: #f4fff4;
       text-align: center;
@@ -220,18 +239,19 @@
     .testimonial p { font-size: 0.95rem; color: #444; }
     .testimonial h4 { color: #2e7d32; margin-top: 10px; }
 
-    /* ===== Footer ===== */
+    /* ===== Footer (Centered) ===== */
     footer {
       background: linear-gradient(to right, #1b5e20, #2e7d32);
       color: white;
       padding: 40px 20px 10px;
       margin-top: 60px;
+      text-align: center;
     }
     .footer-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      text-align: left;
+      justify-content: center;
+      text-align: center;
       max-width: 1200px;
       margin: auto;
       gap: 40px;
@@ -240,6 +260,7 @@
       border-bottom: 1px solid #ffffff33;
       padding-bottom: 8px;
       margin-bottom: 10px;
+      display: inline-block;
     }
     footer a {
       color: white;
@@ -407,8 +428,8 @@
         <p>📞 +91-8271890090</p>
         <p>📧 ayurveez@gmail.com</p>
         <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
-        <p><a href="https://www.youtube.com/@ayurveez" target="_blank">YouTube Channel</a></p>
-        <p><a href="https://www.instagram.com/ayurveez_bams/" target="_blank">Instagram Page</a></p>
+        <p><a href="https://www.youtube.com/@ayurveez" target="_blank"><img src="../Assets/Images/Youtube_logo.png" style="width:20px;"> YouTube Channel</a></p>
+        <p><a href="https://www.instagram.com/ayurveez_bams/" target="_blank"><img src="../Assets/Images/instagram.png" style="width:20px;"> Instagram Page</a></p>
       </div>
       <div>
         <h4>Legal</h4>
@@ -442,7 +463,7 @@
     menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
 
-    // Testimonial Fade Auto Slide
+    // Testimonial Auto Slide
     const testimonials = document.querySelectorAll('.testimonial');
     let tIndex = 0;
     setInterval(() => {
@@ -450,6 +471,13 @@
       tIndex = (tIndex + 1) % testimonials.length;
       testimonials[tIndex].classList.add('active');
     }, 5000);
+
+    // ✅ Register Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('✅ Service Worker registered!'))
+        .catch(err => console.log('❌ SW registration failed:', err));
+    }
   </script>
 </body>
 </html>

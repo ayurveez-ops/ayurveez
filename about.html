@@ -14,7 +14,7 @@
       padding: 0;
     }
 
-    /* Header/Navbar */
+    /* 🌿 Header/Navbar */
     header {
       background: #e5f2d6;
       padding: 15px 20px;
@@ -24,6 +24,13 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     header h1 a {
@@ -40,8 +47,13 @@
       border-radius: 8px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
     nav a {
-      margin: 0 10px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
@@ -51,7 +63,45 @@
       color: #2f6b2f;
     }
 
-    /* About Section */
+    /* 🌿 Hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 2000;
+    }
+
+    .menu-toggle div {
+      width: 28px;
+      height: 3px;
+      background-color: #2f6b2f;
+      margin: 4px 0;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #e5f2d6;
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* 🌿 About Section */
     .about-section {
       text-align: center;
       padding: 60px 20px;
@@ -90,7 +140,7 @@
       background: #1b5e20;
     }
 
-    /* Footer */
+    /* 🌿 Footer Section */
     footer {
       background: linear-gradient(to right, #1b5e20, #2e7d32);
       color: white;
@@ -136,7 +186,25 @@
       font-size: 0.9rem;
     }
 
-    /* WhatsApp Floating Icon */
+    /* 🌿 Responsive Footer Center */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-container div {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      footer h3, footer p, footer a {
+        text-align: center;
+      }
+    }
+
+    /* 🌿 WhatsApp Floating Icon */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -152,7 +220,7 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       text-decoration: none;
       animation: pulse 1.5s infinite;
-      z-index: 9999;
+      z-index: 3000;
     }
 
     .whatsapp-float img {
@@ -169,7 +237,7 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- 🌿 Header -->
   <header>
     <h1>
       <a href="index.html">
@@ -177,7 +245,14 @@
         Ayurveez
       </a>
     </h1>
-    <nav>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <nav id="nav-links">
       <a href="index.html">Home</a>
       <a href="Courses/courses.html">Courses</a>
       <a href="Consultation/index.html">Consultation</a>
@@ -188,7 +263,7 @@
     </nav>
   </header>
 
-  <!-- About Section -->
+  <!-- 🌿 About Section -->
   <section class="about-section">
     <h2>About Ayurveez</h2>
     <p>Ayurveez stands at the forefront of Ayurvedic education and innovation. Whether you are a student eager to learn through comprehensive BAMS courses or an aspiring entrepreneur seeking guidance through our Ayurveda Startup Incubator — Ayurveez is your one-stop destination.</p>
@@ -198,10 +273,9 @@
     <a class="pdf-button" href="Assets/Pdf/About Ayurveez.pdf" target="_blank">📄 View Full Brochure (PDF)</a>
   </section>
 
-  <!-- Footer -->
+  <!-- 🌿 Footer -->
   <footer>
     <div class="footer-container">
-
       <div>
         <h3>Ayurveez Healthcare</h3>
         <p>Promoting Ayurvedic learning and wellness through education, consultation, and authentic healthcare products. Our mission is to blend ancient wisdom with modern understanding.</p>
@@ -222,14 +296,9 @@
         <p>📞 +91-8271890090</p>
         <p>📧 ayurveez@gmail.com</p>
         <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
-        <p>
-          <a href="https://www.youtube.com/@ayurveez" target="_blank">YouTube Channel</a>
-        </p>
-        <p>
-          <a href="https://www.instagram.com/ayurveez_bams/" target="_blank">Instagram Page</a>
-        </p>
+        <p><a href="https://www.youtube.com/@ayurveez" target="_blank"><img src="../Assets/Images/Youtube_logo.png" style="width:20px;"> YouTube Channel</a></p>
+        <p><a href="https://www.instagram.com/ayurveez_bams/" target="_blank"><img src="../Assets/Images/instagram.png" style="width:20px;"> Instagram Page</a></p>
       </div>
-
       <div>
         <h3>Legal</h3>
         <a href="privacy.html">Privacy Policy</a>
@@ -241,10 +310,19 @@
     <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
   </footer>
 
-  <!-- WhatsApp Floating Icon -->
+  <!-- 🌿 Floating WhatsApp Icon -->
   <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
     <img src="Assets/Images/whatsapp.png" alt="WhatsApp Chat">
   </a>
 
+  <!-- 🌿 Script -->
+  <script>
+    const menuToggle = document.getElementById("mobile-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>

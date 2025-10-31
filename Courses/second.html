@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Second Year Subjects - Ayurveez</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css" />
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: #f8f9fa;
       text-align: center;
-      padding: 20px;
       margin: 0;
       color: #222;
     }
@@ -26,6 +25,7 @@
       top: 0;
       z-index: 1000;
     }
+
     header h1 {
       margin: 0;
       color: #2f6b2f;
@@ -33,6 +33,7 @@
       align-items: center;
       gap: 10px;
     }
+
     header h1 a {
       text-decoration: none;
       color: #2f6b2f;
@@ -40,22 +41,30 @@
       align-items: center;
       gap: 10px;
     }
+
     header h1 img {
       width: 40px;
       height: 40px;
       border-radius: 8px;
     }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
     nav a {
-      margin: 0 10px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
     }
+
     nav a:hover {
       color: #2f6b2f;
     }
 
-    /* 🌿 Dropdown Menu */
+    /* 🌿 Dropdown */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -65,8 +74,8 @@
       display: none;
       position: absolute;
       background-color: #f9fff9;
-      min-width: 220px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      min-width: 200px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       z-index: 1000;
     }
@@ -77,7 +86,6 @@
       text-decoration: none;
       display: block;
       text-align: left;
-      font-weight: 500;
     }
 
     .dropdown-content a:hover {
@@ -89,32 +97,87 @@
       display: block;
     }
 
-    .dropbtn {
+    /* 🌿 Hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
       cursor: pointer;
     }
 
-    /* 🌿 Course Cards */
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: #2f6b2f;
+      margin: 4px 0;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #e5f2d6;
+        width: 100%;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        padding: 10px 0;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: none;
+      }
+
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+      }
+    }
+
+    /* 🌿 Courses */
+    h1 {
+      margin: 40px 0 20px;
+      color: #1b5e20;
+    }
+
     .subject-container {
       display: flex;
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
     }
+
     .card {
       width: 250px;
       background: white;
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: 0.3s;
     }
-    .card:hover { transform: scale(1.05); }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
     .card img {
       width: 100%;
       height: 160px;
       object-fit: cover;
     }
-    .card h3 { margin: 10px 0; }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
     .btn {
       background: #00897b;
       color: white;
@@ -124,46 +187,45 @@
       border-radius: 8px;
       cursor: pointer;
     }
-    .btn:hover { background: #00695c; }
 
-    /* 🌿 Modal Styling */
+    .btn:hover {
+      background: #00695c;
+    }
+
+    /* 🌿 Modal */
     #enrollModal {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
       justify-content: center;
       align-items: center;
       z-index: 2000;
     }
+
     .modal-content {
       background: white;
       padding: 25px;
       border-radius: 12px;
       width: 90%;
       max-width: 400px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
       text-align: center;
       animation: fadeIn 0.3s ease-in-out;
     }
+
     @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.9);}
-      to {opacity: 1; transform: scale(1);}
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
-    .modal-buttons {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 20px;
-    }
-    .modal-buttons button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    #payNow { background: #00897b; color: #fff; }
-    #cancelBtn { background: #ccc; }
 
     /* 🌿 Footer */
     footer {
@@ -172,20 +234,24 @@
       padding: 40px 20px 10px;
       margin-top: 60px;
     }
+
     footer h3 {
       border-bottom: 1px solid #ffffff33;
       padding-bottom: 8px;
       margin-bottom: 10px;
     }
+
     footer a {
       color: white;
       text-decoration: none;
       display: block;
       margin-bottom: 6px;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
+
     .footer-container {
       display: flex;
       flex-wrap: wrap;
@@ -195,21 +261,44 @@
       margin: auto;
       gap: 40px;
     }
+
     footer p {
       margin: 6px 0;
       font-size: 0.95rem;
     }
+
     footer hr {
       margin: 30px auto;
       border-color: #ffffff33;
       width: 90%;
     }
+
     .copyright {
       text-align: center;
       font-size: 0.9rem;
     }
 
-    /* 🌿 Floating WhatsApp Icon */
+    /* 🌿 Footer Center Fix on Mobile */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-container div {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      footer p,
+      footer a,
+      footer h3 {
+        text-align: center;
+      }
+    }
+
+    /* 🌿 WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -222,44 +311,51 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       text-decoration: none;
       animation: pulse 1.5s infinite;
       z-index: 3000;
     }
+
     .whatsapp-float img {
       width: 30px;
       height: 30px;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
-      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37,211,102, 0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
-    }
 
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
       }
     }
   </style>
 </head>
-
 <body>
-
   <!-- 🌿 Header -->
   <header>
     <h1>
       <a href="../index.html">
-        <img src="../Assets/Images/logo.png" alt="Ayurveez Logo">
+        <img src="../Assets/Images/logo.png" alt="Ayurveez Logo" />
         Ayurveez
       </a>
     </h1>
+
+    <div class="menu-toggle" id="mobile-menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
     <nav>
       <a href="../index.html">Home</a>
-
       <div class="dropdown">
         <a href="../Courses/courses.html" class="dropbtn">Courses ▾</a>
         <div class="dropdown-content">
@@ -268,7 +364,6 @@
           <a href="../Courses/final.html">Final Professional Year</a>
         </div>
       </div>
-
       <a href="../Consultation/index.html">Consultation</a>
       <a href="../Products/index.html">Products</a>
       <a href="../index.html#about">About</a>
@@ -282,46 +377,46 @@
 
   <div class="subject-container">
     <div class="card">
-      <img src="images/rasashastra.jpg" alt="Rasashastra">
+      <img src="images/rasashastra.jpg" alt="Rasashastra" />
       <h3>Rasashastra & Bhaishajya Kalpana</h3>
       <p>₹999</p>
       <button class="btn enroll-btn" data-course="Rasashastra & Bhaishajya Kalpana">Enroll</button>
     </div>
     <div class="card">
-      <img src="images/dravyaguna.jpg" alt="Dravyaguna">
+      <img src="images/dravyaguna.jpg" alt="Dravyaguna" />
       <h3>Dravyaguna Vigyan</h3>
       <p>₹999</p>
       <button class="btn enroll-btn" data-course="Dravyaguna Vigyan">Enroll</button>
     </div>
     <div class="card">
-      <img src="images/roganidan.jpg" alt="Rog Nidan">
+      <img src="images/roganidan.jpg" alt="Rog Nidan" />
       <h3>Rog Nidan & Vikriti Vigyan</h3>
       <p>₹999</p>
       <button class="btn enroll-btn" data-course="Rog Nidan & Vikriti Vigyan">Enroll</button>
     </div>
     <div class="card">
-      <img src="images/swasthavritta.jpg" alt="Swasthavritta">
+      <img src="images/swasthavritta.jpg" alt="Swasthavritta" />
       <h3>Swasthavritta</h3>
       <p>₹999</p>
       <button class="btn enroll-btn" data-course="Swasthavritta">Enroll</button>
     </div>
     <div class="card">
-      <img src="images/samhita 2.jpg" alt="Samhita Adhyayan">
+      <img src="images/samhita 2.jpg" alt="Samhita Adhyayan" />
       <h3>Samhita Adhyayan 2</h3>
       <p>₹999</p>
       <button class="btn enroll-btn" data-course="Samhita Adhyayan 2">Enroll</button>
     </div>
     <div class="card">
-      <img src="images/agadatantra.jpg" alt="Agadtantra">
+      <img src="images/agadatantra.jpg" alt="Agadtantra" />
       <h3>Agadtantra & Vyavahar Ayurveda</h3>
       <p>₹999</p>
       <button class="btn enroll-btn" data-course="Agadtantra & Vyavahar Ayurveda">Enroll</button>
     </div>
   </div>
 
-  <h2 style="margin-top:40px;">Bundle Offer</h2>
-  <div class="card" style="margin:0 auto; width:280px;">
-    <img src="images/second.jpg" alt="Bundle">
+  <h2 style="margin-top: 40px;">Bundle Offer</h2>
+  <div class="card" style="margin: 0 auto; width: 280px;">
+    <img src="images/second.jpg" alt="Bundle" />
     <h3>Second Year Full Bundle</h3>
     <p>All 6 subjects together — ₹5555</p>
     <button class="btn enroll-btn" data-course="Second Year Full Bundle">Enroll Bundle</button>
@@ -360,16 +455,8 @@
         <p>📞 +91-8271890090</p>
         <p>📧 ayurveez@gmail.com</p>
         <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
-        <p>
-          <a href="https://www.youtube.com/@ayurveez" target="_blank">
-            <img src="../Assets/Images/Youtube_logo.png" alt="YouTube" style="width:20px; vertical-align:middle;"> YouTube Channel
-          </a>
-        </p>
-        <p>
-          <a href="https://www.instagram.com/ayurveez_bams/" target="_blank">
-            <img src="../Assets/Images/instagram.png" alt="Instagram" style="width:20px; vertical-align:middle;"> Instagram Page
-          </a>
-        </p>
+        <p><a href="https://www.youtube.com/@ayurveez" target="_blank"><img src="../Assets/Images/Youtube_logo.png" style="width:20px;"> YouTube Channel</a></p>
+        <p><a href="https://www.instagram.com/ayurveez_bams/" target="_blank"><img src="../Assets/Images/instagram.png" style="width:20px;"> Instagram Page</a></p>
       </div>
       <div>
         <h3>Legal</h3>
@@ -377,44 +464,45 @@
         <a href="../terms.html">Terms & Conditions</a>
       </div>
     </div>
-    <hr>
+    <hr />
     <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
   </footer>
 
-  <!-- 🌿 WhatsApp Floating Icon -->
+  <!-- 🌿 WhatsApp -->
   <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
-    <img src="../Assets/Images/whatsapp.png" alt="WhatsApp Chat">
+    <img src="../Assets/Images/whatsapp.png" alt="WhatsApp Chat" />
   </a>
 
   <!-- 🌿 Script -->
   <script>
+    // Hamburger
+    const menu = document.querySelector("nav");
+    const menuToggle = document.getElementById("mobile-menu");
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+
+    // Modal
     const modal = document.getElementById("enrollModal");
     const title = document.getElementById("modalTitle");
     const desc = document.getElementById("modalDesc");
-    let selectedCourse = "";
 
-    document.querySelectorAll(".enroll-btn").forEach(btn => {
+    document.querySelectorAll(".enroll-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        selectedCourse = btn.dataset.course;
-        title.innerText = "Enroll in " + selectedCourse;
-        desc.innerText = "You are about to enroll for " + selectedCourse + ". Proceed to secure payment?";
+        title.innerText = "Enroll in " + btn.dataset.course;
+        desc.innerText = "You are about to enroll for " + btn.dataset.course + ". Proceed to secure payment?";
         modal.style.display = "flex";
       });
     });
 
-    document.getElementById("cancelBtn").onclick = () => {
-      modal.style.display = "none";
-    };
-
+    document.getElementById("cancelBtn").onclick = () => (modal.style.display = "none");
     document.getElementById("payNow").onclick = () => {
       modal.style.display = "none";
       window.open("https://payments.cashfree.com/forms?code=ayurveez_pay", "_blank");
     };
-
-    modal.addEventListener("click", e => {
+    modal.addEventListener("click", (e) => {
       if (e.target === modal) modal.style.display = "none";
     });
   </script>
-
 </body>
 </html>
