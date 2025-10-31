@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products | Ayurveez</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8fff5;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* 🌿 Header/Navbar */
+    header {
+      background: #e5f2d6;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header h1 a {
+      text-decoration: none;
+      color: #2f6b2f;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header h1 a:hover {
+      opacity: 0.85;
+    }
+
+    header img {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2f6b2f;
+    }
+
+    /* 🌿 Products Section */
+    .product-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 280px;
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .product h3 {
+      color: #2e7d32;
+      margin-top: 10px;
+    }
+
+    .product p {
+      font-size: 0.95rem;
+      padding: 0 10px 10px;
+    }
+
+    .btn {
+      background: #00897b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #00695c;
+    }
+
+    /* 🌿 Footer Section */
+    footer {
+      background: linear-gradient(to right, #1b5e20, #2e7d32);
+      color: white;
+      padding: 40px 20px 10px;
+      margin-top: 60px;
+    }
+
+    footer h3 {
+      border-bottom: 1px solid #ffffff33;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    footer p {
+      margin: 6px 0;
+      font-size: 0.95rem;
+    }
+
+    footer hr {
+      margin: 30px auto;
+      border-color: #ffffff33;
+      width: 90%;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* 🌿 Floating WhatsApp Icon */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-decoration: none;
+      animation: pulse 1.5s infinite;
+      z-index: 9999;
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37,211,102, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🌿 Header -->
+  <header>
+    <h1>
+      <a href="../index.html">
+        <img src="../Assets/Images/logo.png" alt="Ayurveez Logo">
+        Ayurveez
+      </a>
+    </h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../Courses/courses.html">Courses</a>
+      <a href="../Consultation/index.html">Consultation</a>
+      <a href="index.html">Products</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 🌿 Product List -->
+  <section class="product-list">
+
+    <div class="product">
+      <img src="../Assets/Images/chyawanprash.jpg" alt="Chyawanprash">
+      <h3>Chyawanprash</h3>
+      <p>Boosts immunity & vitality.</p>
+      <a href="https://wa.me/918271890090?text=I want to buy Chyawanprash" class="btn">Buy on WhatsApp</a>
+    </div>
+
+    <div class="product">
+      <img src="../Assets/Images/ashwagandha.jpg" alt="Ashwagandha">
+      <h3>Ashwagandha</h3>
+      <p>Helps reduce stress & improves strength.</p>
+      <a href="https://wa.me/918271889000?text=I want to buy Ashwagandha" class="btn">Buy on WhatsApp</a>
+    </div>
+
+    <div class="product">
+      <img src="../Assets/Images/triphala.jpg" alt="Triphala">
+      <h3>Triphala</h3>
+      <p>Improves digestion & detoxifies body.</p>
+      <a href="https://wa.me/918271889000?text=I want to buy Triphala" class="btn">Buy on WhatsApp</a>
+    </div>
+
+  </section>
+
+  <!-- 🌿 Footer -->
+  <footer>
+    <div class="footer-container">
+
+      <div>
+        <h3>Ayurveez Healthcare</h3>
+        <p>Promoting Ayurvedic learning and wellness through education, consultation, and authentic healthcare products. Our mission is to blend ancient wisdom with modern understanding.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="../index.html">Home</a>
+        <a href="../Courses/courses.html">Courses</a>
+        <a href="index.html">Products</a>
+        <a href="../Consultation/index.html">Consultation</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <p>📞 +91-8271890090</p>
+        <p>📧 ayurveez@gmail.com</p>
+        <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
+        <p>
+          <a href="https://www.youtube.com/@ayurveez" target="_blank">
+            <img src="../Assets/Images/Youtube_logo.png" alt="YouTube" style="width:20px; vertical-align:middle;"> YouTube Channel
+          </a>
+        </p>
+        <p>
+          <a href="https://www.instagram.com/ayurveez_bams/" target="_blank">
+            <img src="../Assets/Images/instagram.png" alt="Instagram" style="width:20px; vertical-align:middle;"> Instagram Page
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+
+    <hr>
+    <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
+  </footer>
+
+  <!-- 🌿 Floating WhatsApp Icon -->
+  <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
+    <img src="../Assets/Images/whatsapp.png" alt="WhatsApp Chat">
+  </a>
+
+</body>
+</html>

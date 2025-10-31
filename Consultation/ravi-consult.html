@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consult Dr. Ravi Shankar | Ayurveez</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f7f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #00695c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 25px;
+      font-size: 1rem;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 640px;
+      height: 900px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* 🌿 Header/Navbar */
+    header {
+      background: #e5f2d6;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header h1 a {
+      text-decoration: none;
+      color: #2f6b2f;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header h1 a:hover {
+      opacity: 0.85;
+    }
+
+    header img {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2f6b2f;
+    }
+
+    /* 🌿 Footer Section */
+    footer {
+      background: linear-gradient(to right, #1b5e20, #2e7d32);
+      color: white;
+      padding: 40px 20px 10px;
+      margin-top: 60px;
+    }
+
+    footer h3 {
+      border-bottom: 1px solid #ffffff33;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    footer p {
+      margin: 6px 0;
+      font-size: 0.95rem;
+    }
+
+    footer hr {
+      margin: 30px auto;
+      border-color: #ffffff33;
+      width: 90%;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* 🌿 Floating WhatsApp Icon */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-decoration: none;
+      animation: pulse 1.5s infinite;
+      z-index: 9999;
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37,211,102, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🌿 Header -->
+  <header>
+    <h1>
+      <a href="../index.html">
+        <img src="../Assets/Images/logo.png" alt="Ayurveez Logo">
+        Ayurveez
+      </a>
+    </h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../Courses/courses.html">Courses</a>
+      <a href="index.html">Consultation</a>
+      <a href="../Products/index.html">Products</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 🌿 Main Content -->
+  <main>
+    <h2>Consult Dr. Ravi Shankar (BAMS)</h2>
+    <p>Please fill this form to book your Ayurvedic consultation.</p>
+    <iframe src="https://whatsform.com/usSArW"></iframe>
+  </main>
+
+  <!-- 🌿 Footer -->
+  <footer>
+    <div class="footer-container">
+
+      <div>
+        <h3>Ayurveez Healthcare</h3>
+        <p>Promoting Ayurvedic learning and wellness through education, consultation, and authentic healthcare products. Our mission is to blend ancient wisdom with modern understanding.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="../index.html">Home</a>
+        <a href="../Courses/courses.html">Courses</a>
+        <a href="../Products/index.html">Products</a>
+        <a href="index.html">Consultation</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <p>📞 +91-8271890090</p>
+        <p>📧 ayurveez@gmail.com</p>
+        <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
+        <p>
+          <a href="https://www.youtube.com/@ayurveez" target="_blank">
+            <img src="../Assets/Images/Youtube_logo.png" alt="YouTube" style="width:20px; vertical-align:middle;"> YouTube Channel
+          </a>
+        </p>
+        <p>
+          <a href="https://www.instagram.com/ayurveez_bams/" target="_blank">
+            <img src="../Assets/Images/instagram.png" alt="Instagram" style="width:20px; vertical-align:middle;"> Instagram Page
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+
+    <hr>
+    <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
+  </footer>
+
+  <!-- 🌿 Floating WhatsApp Icon -->
+  <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
+    <img src="../Assets/Images/whatsapp.png" alt="WhatsApp Chat">
+  </a>
+
+</body>
+</html>

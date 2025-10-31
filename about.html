@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Ayurveez</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8fff5;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header/Navbar */
+    header {
+      background: #e5f2d6;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 a {
+      text-decoration: none;
+      color: #2f6b2f;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header h1 img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #2f6b2f;
+    }
+
+    /* About Section */
+    .about-section {
+      text-align: center;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .about-section h2 {
+      color: #1b5e20;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .pdf-button {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .pdf-button:hover {
+      background: #1b5e20;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(to right, #1b5e20, #2e7d32);
+      color: white;
+      padding: 40px 20px 10px;
+      margin-top: 60px;
+    }
+
+    footer h3 {
+      border-bottom: 1px solid #ffffff33;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    footer hr {
+      margin: 30px auto;
+      border-color: #ffffff33;
+      width: 90%;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* WhatsApp Floating Icon */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-decoration: none;
+      animation: pulse 1.5s infinite;
+      z-index: 9999;
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37,211,102, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>
+      <a href="index.html">
+        <img src="Assets/Images/logo.png" alt="Ayurveez Logo">
+        Ayurveez
+      </a>
+    </h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="Courses/courses.html">Courses</a>
+      <a href="Consultation/index.html">Consultation</a>
+      <a href="Products/index.html">Products</a>
+      <a href="about.html" style="color:#2f6b2f; font-weight:600;">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>About Ayurveez</h2>
+    <p>Ayurveez stands at the forefront of Ayurvedic education and innovation. Whether you are a student eager to learn through comprehensive BAMS courses or an aspiring entrepreneur seeking guidance through our Ayurveda Startup Incubator — Ayurveez is your one-stop destination.</p>
+    <p>We provide structured lectures, notes, and practical learning for BAMS and AIAPGET preparation, while also promoting creativity through Paid Volunteering, clinical exposure, and healthcare initiatives. Ayurveez blends the ancient wisdom of Ayurveda with modern tools to empower learners, practitioners, and wellness seekers alike.</p>
+    <p>Join our growing community to experience Ayurveda not just as a subject, but as a lifestyle — where learning meets purpose, and tradition meets innovation.</p>
+
+    <a class="pdf-button" href="Assets/Pdf/About Ayurveez.pdf" target="_blank">📄 View Full Brochure (PDF)</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+
+      <div>
+        <h3>Ayurveez Healthcare</h3>
+        <p>Promoting Ayurvedic learning and wellness through education, consultation, and authentic healthcare products. Our mission is to blend ancient wisdom with modern understanding.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="Courses/courses.html">Courses</a>
+        <a href="Products/index.html">Products</a>
+        <a href="Consultation/index.html">Consultation</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div>
+        <h3>Contact Us</h3>
+        <p>📞 +91-8271890090</p>
+        <p>📧 ayurveez@gmail.com</p>
+        <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
+        <p>
+          <a href="https://www.youtube.com/@ayurveez" target="_blank">YouTube Channel</a>
+        </p>
+        <p>
+          <a href="https://www.instagram.com/ayurveez_bams/" target="_blank">Instagram Page</a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+
+    <hr>
+    <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
+  </footer>
+
+  <!-- WhatsApp Floating Icon -->
+  <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
+    <img src="Assets/Images/whatsapp.png" alt="WhatsApp Chat">
+  </a>
+
+</body>
+</html>

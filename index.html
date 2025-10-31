@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayurveez | Ayurveda for Everyone</title>
+
+  <!-- ✅ Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E1C8CNPLW9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E1C8CNPLW9');
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; margin: 0; background: #f8fff5; color: #222; }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f2f8f2;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .navbar .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #2a7a39;
+    }
+    .navbar .logo { width: 45px; height: 45px; border-radius: 10px; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-links a { text-decoration: none; color: #333; font-weight: 500; }
+    .menu-toggle { display: none; flex-direction: column; cursor: pointer; }
+    .menu-toggle div { width: 25px; height: 3px; background-color: #2a7a39; margin: 4px 0; transition: 0.4s; }
+
+    /* ===== Dropdown ===== */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9fff9;
+      min-width: 220px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      z-index: 9999;
+      top: 30px;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      text-align: left;
+      font-weight: 500;
+    }
+    .dropdown-content a:hover {
+      background: #e5f2d6;
+      color: #2f6b2f;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column; background: #f2f8f2;
+        position: absolute; top: 65px; left: 0; width: 100%; text-align: center;
+        border-top: 1px solid #ddd; z-index: 999;
+      }
+      .nav-links.active { display: flex; }
+    }
+
+    /* ===== Shloka Slider ===== */
+    .shloka-slider {
+      background: #e8f5e9;
+      color: #1b5e20;
+      font-weight: 500;
+      text-align: center;
+      padding: 15px 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    .shloka-slide {
+      display: none;
+      font-size: 1.1rem;
+      animation: fade 1s ease-in-out;
+    }
+    .shloka-slide.active { display: block; }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 80px 50px;
+      background: #f6fff6;
+      flex-wrap: wrap;
+    }
+    .hero-text { max-width: 500px; }
+    .hero-text h1 { font-size: 2.8rem; color: #2a7a39; }
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .hero-buttons a {
+      background: #2e7d32;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin-right: 10px;
+      font-weight: 500;
+    }
+    .hero-buttons a:hover { background: #1b5e20; }
+    .hero img { width: 350px; border-radius: 15px; }
+
+    /* ===== Our Services ===== */
+    #services {
+      background: #f4fff4;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    #services h2 { color: #1b5e20; font-size: 2rem; margin-bottom: 30px; }
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 15px;
+      width: 280px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    .service-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .service-card h3 { color: #2a7a39; }
+    .service-card p { font-size: 0.95rem; }
+    .service-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #2e7d32;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    /* ===== About Section ===== */
+    #about {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f9fff9;
+    }
+    #about h2 { color: #2a7a39; font-size: 2rem; margin-bottom: 15px; }
+    #about p { max-width: 700px; margin: 0 auto 20px; font-size: 1rem; color: #333; }
+    #about a {
+      background: #2e7d32; color: white; text-decoration: none;
+      padding: 10px 20px; border-radius: 8px; display: inline-block;
+    }
+
+    /* ===== Testimonials ===== */
+    #testimonials {
+      background: #f1fff1;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      min-height: 250px;
+    }
+    #testimonials h2 { color: #1b5e20; margin-bottom: 40px; }
+    .testimonial {
+      display: none;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 25px;
+      max-width: 450px;
+      margin: auto;
+      font-style: italic;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .testimonial.active {
+      display: block;
+      opacity: 1;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .testimonial p { font-size: 0.95rem; color: #444; }
+    .testimonial h4 { color: #2e7d32; margin-top: 10px; }
+
+    /* ===== Footer ===== */
+    footer {
+      background: linear-gradient(to right, #1b5e20, #2e7d32);
+      color: white;
+      padding: 40px 20px 10px;
+      margin-top: 60px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: left;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+    footer h4 {
+      border-bottom: 1px solid #ffffff33;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+    footer a:hover { text-decoration: underline; }
+    footer hr { margin: 30px auto; border-color: #ffffff33; width: 90%; }
+    .copyright { text-align: center; font-size: 0.9rem; }
+
+    /* ===== WhatsApp ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: pulse 1.5s infinite;
+      z-index: 9999;
+    }
+    .whatsapp-float img { width: 30px; height: 30px; }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37,211,102, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102, 0); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="brand">
+      <a href="index.html" style="display:flex; align-items:center; text-decoration:none; color:#2a7a39;">
+        <img src="Assets/Images/logo.png" alt="Ayurveez Logo" class="logo">
+        Ayurveez
+      </a>
+    </h1>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <div></div><div></div><div></div>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+
+      <div class="dropdown">
+        <a href="Courses/courses.html">Courses ▾</a>
+        <div class="dropdown-content">
+          <a href="Courses/first.html">First Professional Year</a>
+          <a href="Courses/second.html">Second Professional Year</a>
+          <a href="Courses/final.html">Final Professional Year</a>
+        </div>
+      </div>
+
+      <a href="Consultation/index.html">Consultation</a>
+      <a href="Products/index.html">Products</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Shloka Slider -->
+  <section class="shloka-slider">
+    <div class="shloka-slide active">🕉️ “धर्मार्थकाममोक्षाणाम् आरोग्यं मूलमुत्तमम्।”</div>
+    <div class="shloka-slide">“Health is the foundation of Dharma, Artha, Kama and Moksha.”</div>
+    <div class="shloka-slide">🌿 “सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः।”</div>
+    <div class="shloka-slide">May all be happy, may all be free from illness.</div>
+    <div class="shloka-slide">🔥 "अहारसंभवो देहः।"</div>
+    <div class="shloka-slide">💫 “When diet is wrong, medicine is of no use; when diet is correct, medicine is of no need.”</div>
+  </section>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Ayurveez</h1>
+      <p>Explore the world of Ayurveda and harness the power of natural healing — courses, consultation, and authentic products to support your health journey.</p>
+      <div class="hero-buttons">
+        <a href="Courses/courses.html">Courses</a>
+        <a href="Consultation/index.html">Consult</a>
+        <a href="Products/index.html">Products</a>
+      </div>
+    </div>
+    <img src="Assets/Images/hero image.png" alt="Ayurveda Healing">
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <img src="Assets/Images/bams course square.png" alt="Courses">
+        <h3>BAMS Courses</h3>
+        <p>Learn from structured Ayurveda courses curated for BAMS students.</p>
+        <a href="Courses/courses.html">Explore</a>
+      </div>
+      <div class="service-card">
+        <img src="Assets/Images/consult dr.png" alt="Consultation">
+        <h3>Consultation</h3>
+        <p>Book consultations with experienced Ayurvedic and modern doctors.</p>
+        <a href="Consultation/index.html">Consult</a>
+      </div>
+      <div class="service-card">
+        <img src="Assets/Images/product square.png" alt="Products">
+        <h3>Products</h3>
+        <p>Shop trusted Ayurvedic and herbal products crafted with care.</p>
+        <a href="Products/index.html">Shop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Ayurveez</h2>
+    <p>Ayurveez blends ancient Ayurvedic wisdom with modern learning — empowering students, doctors, and wellness seekers through education, innovation, and authentic healthcare knowledge.</p>
+    <a href="about.html">Learn More</a>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What People Say About Ayurveez</h2>
+    <div class="testimonial active">
+      <p>"Ayurveez ke BAMS lectures ne meri concepts itne clear kar diye ki exam me likhna bahut easy ho gaya. Notes are really helpful!"</p>
+      <h4>— Shreya Kumari</h4>
+    </div>
+    <div class="testimonial">
+      <p>"After my online consultation on Ayurveez, my digestion and sleep both improved within weeks. Doctor’s advice was truly effective."</p>
+      <h4>— Rohit K.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Their products are genuine and very effective. Loved the experience."</p>
+      <h4>— Abhishek</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Finally, a platform that connects Ayurveda learners and practitioners!"</p>
+      <h4>— Manish Kumar</h4>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h4>Ayurveez Healthcare</h4>
+        <p>Promoting Ayurvedic learning and wellness through education, consultation, and authentic healthcare products. Our mission is to blend ancient wisdom with modern understanding.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="Courses/courses.html">Courses</a>
+        <a href="Products/index.html">Products</a>
+        <a href="Consultation/index.html">Consultation</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>📞 +91-8271890090</p>
+        <p>📧 ayurveez@gmail.com</p>
+        <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar</p>
+        <p><a href="https://www.youtube.com/@ayurveez" target="_blank">YouTube Channel</a></p>
+        <p><a href="https://www.instagram.com/ayurveez_bams/" target="_blank">Instagram Page</a></p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+    </div>
+    <hr>
+    <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
+    <img src="Assets/Images/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <!-- JS -->
+  <script>
+    // Shloka Slider
+    const slides = document.querySelectorAll('.shloka-slide');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 4000);
+
+    // Navbar Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+
+    // Testimonial Fade Auto Slide
+    const testimonials = document.querySelectorAll('.testimonial');
+    let tIndex = 0;
+    setInterval(() => {
+      testimonials[tIndex].classList.remove('active');
+      tIndex = (tIndex + 1) % testimonials.length;
+      testimonials[tIndex].classList.add('active');
+    }, 5000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions | Ayurveez</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8fff5;
+      color: #222;
+      margin: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: #e5f2d6;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { margin: 0; color: #2f6b2f; }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    nav a:hover { color: #2f6b2f; }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2f6b2f;
+      border-left: 4px solid #2f6b2f;
+      padding-left: 8px;
+      margin-top: 30px;
+    }
+    footer {
+      background: linear-gradient(to right, #1b5e20, #2e7d32);
+      color: white;
+      padding: 40px 20px 10px;
+      margin-top: 60px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+      text-align: left;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+    footer a:hover { text-decoration: underline; }
+    .copyright { text-align: center; font-size: 0.9rem; }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: pulse 1.5s infinite;
+      z-index: 9999;
+    }
+    .whatsapp-float img { width: 30px; height: 30px; }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(37,211,102,0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌿 Header -->
+  <header>
+    <h1>Ayurveez</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="Courses/courses.html">Courses</a>
+      <a href="Consultation/index.html">Consultation</a>
+      <a href="Products/index.html">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Terms & Conditions</h1>
+    <p>By using Ayurveez services, you agree to these terms. Please read them carefully.</p>
+
+    <h2>1. Purpose</h2>
+    <p>Our courses, consultations, and products are designed for educational and wellness purposes only.</p>
+
+    <h2>2. Payment & Refund Policy</h2>
+    <p>Once a course or consultation is purchased, it is non-refundable except in technical issues verified by our team.</p>
+
+    <h2>3. Content Ownership</h2>
+    <p>All content including videos, notes, and visuals are property of Ayurveez. Copying or redistribution without consent is prohibited.</p>
+
+    <h2>4. Liability</h2>
+    <p>We are not responsible for third-party issues including payment gateway errors or misuse of shared content.</p>
+
+    <h2>5. Contact Us</h2>
+    <p>📍 Vishnupad Road, Bengali Ashram, Gaya 823001, Bihar<br>
+    📧 ayurveez@gmail.com | 📞 +91-8271890090</p>
+  </main>
+
+  <!-- 🌿 Footer -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h3>Ayurveez Healthcare</h3>
+        <p>Promoting Ayurvedic learning and wellness through education and authentic healthcare products.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="Courses/courses.html">Courses</a>
+        <a href="Products/index.html">Products</a>
+        <a href="Consultation/index.html">Consultation</a>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms & Conditions</a>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <p>📞 +91-8271890090</p>
+        <p>📧 ayurveez@gmail.com</p>
+      </div>
+    </div>
+    <hr>
+    <p class="copyright">© 2025 Ayurveez. All Rights Reserved.</p>
+  </footer>
+
+  <!-- 🌿 Floating WhatsApp Icon -->
+  <a href="https://wa.me/8271890090" target="_blank" class="whatsapp-float">
+    <img src="Assets/Images/whatsapp.png" alt="WhatsApp Chat">
+  </a>
+</body>
+</html>
